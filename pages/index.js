@@ -10,7 +10,7 @@ export default function Home({ pokemons }) {
     <div className="flex flex-wrap mx-auto justify-center">
       {
         pokemons.map((pokeman, i)=>(
-          <div key={i} className="bg-gray-200 mx-12 my-4">
+          <div key={i} className="w-full flex justify-center sm:w-fit hover:bg-gray-200 bg-gray-50 p-5 m-6 lg:mx-7 xl:mx-12 rounded-md">
             <Link href={`/pokemon?id=${i+1}`}>
               <Image 
                   placeholder="blur"
@@ -20,8 +20,10 @@ export default function Home({ pokemons }) {
                   width={200}
                   alt="1">
               </Image>
-              <span>{i+1}.&nbsp;</span>
-              <span>{pokeman.name}</span>
+              <div className="flex justify-center">
+                <span>{i+1}.&nbsp;</span>
+                <span className="capitalize">{pokeman.name}</span>
+              </div>
             </Link>
           </div>
         ))
